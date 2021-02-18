@@ -7,9 +7,9 @@ import { Provider } from "react-redux";
 import rootReducer from "./reducers";
 import reduxThunk from "redux-thunk";
 import axios from "axios";
+import { API_KEY } from "./api";
 
-axios.defaults.headers.common["x-rapidapi-key"] =
-  "df501b1aa1msh9951eb9f33bd935p19875djsnf7106a3a011b";
+axios.defaults.headers.common["x-rapidapi-key"] = API_KEY;
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

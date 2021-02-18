@@ -2,13 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
+import reduxThunk from "redux-thunk";
+import axios from "axios";
+
+axios.defaults.headers.common["x-rapidapi-key"] =
+  "df501b1aa1msh9951eb9f33bd935p19875djsnf7106a3a011b";
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancer(applyMiddleware(reduxThunk))
 );
 
 ReactDOM.render(

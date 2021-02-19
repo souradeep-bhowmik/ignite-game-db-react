@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { loadGameDetails } from "../actions/gameDetailAction";
 
-const Game = ({ name, released, image, id }) => {
+const Game = ({ name, released, image, id, short_screenshots }) => {
   const dispath = useDispatch();
   const loadDetailHandler = () => {
-    dispath(loadGameDetails(id));
+    dispath(loadGameDetails(id, short_screenshots));
   };
   return (
     <StyledGame onClick={loadDetailHandler}>

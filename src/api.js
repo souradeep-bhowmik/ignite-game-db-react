@@ -24,7 +24,3 @@ export const newGamesURL = () => `${BASE_URL}${NEW_GAMES}`;
 
 //  Game details
 export const gameDetailsURL = (gameId) => `${BASE_URL}games/${gameId}`;
-
-//  Game screenshots
-export const gameScreenShotsURL = (gameId) =>
-  `${BASE_URL}games/${gameId}/screenshots`;

@@ -30,13 +30,16 @@ const GlobalStyles = createGlobalStyle`
     }
     h3{
         font-size:  1.3rem;
-        padding:    1.5rem;
+        padding:    1.5rem 0rem;
         color:      #3a4042;
     }
     p{
         font-size:      1.2rem;
         line-height:    200%;
         color:          #696969
+    }
+    img{
+        display: block;
     }
 `;
 

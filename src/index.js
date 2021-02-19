@@ -8,6 +8,7 @@ import rootReducer from "./reducers";
 import reduxThunk from "redux-thunk";
 import axios from "axios";
 import { API_KEY } from "./api";
+import { BrowserRouter } from "react-router-dom";
 
 axios.defaults.headers.common["x-rapidapi-key"] = API_KEY;
 
@@ -21,7 +22,9 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

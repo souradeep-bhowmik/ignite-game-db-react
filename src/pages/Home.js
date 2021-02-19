@@ -5,8 +5,14 @@ import { loadGames } from "../actions/gameActions";
 import Game from "../components/Game";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  const location = useLocation();
+  const pathId = location.pathname.split("/")[2];
+  if (!pathId) {
+    document.body.style.overflow = "auto";
+  }
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadGames());
@@ -16,7 +22,7 @@ const Home = () => {
   );
   return (
     <GameList>
-      <GameDetails />
+      {pathId && <GameDetails />}
       <h2>Upcoming Games</h2>
       <Games>
         {upcomingGames.map((game) => (
